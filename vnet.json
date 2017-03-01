@@ -1,0 +1,37 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualNetworks_sushvnt_name": {
+            "defaultValue": "sushvnt",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/7eab3893-bd71-4690-84a5-47624df0b0e5/resourceGroups/sushvvnet/providers/Microsoft.Network/virtualNetworks/sushvnt'.",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('virtualNetworks_sushvnt_name')]",
+            "apiVersion": "2016-03-30",
+            "location": "centralus",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.2.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "[parameters('virtualNetworks_sushvnt_name')]",
+                        "properties": {
+                            "addressPrefix": "10.2.1.0/24"
+                        }
+                    }
+                ]
+            },
+            "resources": [],
+            "dependsOn": []
+        }
+    ]
+}
