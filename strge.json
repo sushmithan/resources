@@ -9,7 +9,9 @@
         "location": {
             "defaultValue": "westus",
             "type": "String"
-        }
+        },
+        "variables":{},
+        "resources": [
         {
             "comments": "Generalized from resource: '/subscriptions/7eab3893-bd71-4690-84a5-47624df0b0e5/resourceGroups/sush/providers/Microsoft.Storage/storageAccounts/sushsan'.",
             "type": "Microsoft.Storage/storageAccounts",
