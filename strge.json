@@ -5,6 +5,10 @@
         "storageAccounts_sushsan_name": {
             "defaultValue": "sushsan",
             "type": "String"
+        },
+        "location": {
+            "defaultValue": "westus",
+            "type": "String"
         }
     },
     "variables": {},
@@ -19,7 +23,7 @@
             "kind": "Storage",
             "name": "[parameters('storageAccounts_sushsan_name')]",
             "apiVersion": "2016-01-01",
-            "location": "westus",
+            "location": "[parameters(location)"],
             "tags": {},
             "properties": {},
             "resources": [],
