@@ -26,7 +26,8 @@
           "imageSKU":"15.10",
            "imageVersion":"latest",
              "networkInterfaceName":"SuNic",
-              "vmStorageAccountContainerName":"suVmc"
+              "vmStorageAccountContainerName":"suVmc",
+              "storageAccountName":"suSan"
     },
     "resources": [
         {
