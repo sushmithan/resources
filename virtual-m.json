@@ -17,19 +17,14 @@
         "adminPasswordOrSshKey": {
             "type": "securestring",
             "defaultValue": "Sysga1n4205!"
-        },
-          "storageAccountName": {  "type": "string"},
-             
-
-        
-    },
+        }   
+      },
     "variables": {
         "vmSize":"Standard_D2",
-        "imagePublisher":"vmIp",
-         "imageOffer":"vmIo",
-          "imageSKU":"vmIsku",
+        "imagePublisher":"Canonical",
+         "imageOffer":"vlinux",
+          "imageSKU":"15.10",
            "imageVersion":"latest",
-            "imageSKU":"vmSku",
              "networkInterfaceName":"SuNic",
               "vmStorageAccountContainerName":"suVmc"
     },
