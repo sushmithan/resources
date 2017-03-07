@@ -30,7 +30,7 @@
           "imageSKU":"15.10",
            "imageVersion":"latest",
              "networkInterfaceName":"SuNic",
-              "vmStorageAccountContainerName":"suVmc"
+              "vmStorageAccountContainerName":"con"
     },
     "resources": [
         {
