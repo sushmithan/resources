@@ -17,8 +17,7 @@
         "adminPasswordOrSshKey": {
             "type": "securestring",
             "defaultValue": "Sysga1n4205!"
-        }   
-      },
+        },
       "storageAccountName":{
           "type":"String",
           "defaultValue":""
