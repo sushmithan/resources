@@ -32,7 +32,7 @@
     },
     "resources": [
         {
-            "apiVersion":"2015-03-15",
+            "apiVersion":" 2016-08-30",
             "type": "Microsoft.Compute/virtualMachines",
             "name": "Vmsetup",
             "location": "[parameters('location')]",
