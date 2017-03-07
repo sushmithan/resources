@@ -14,7 +14,6 @@
             "metadata": {
                 "description": "Deployment Location Hint: Use lowercase for creating ipaddress"
             }
-        }
         },
         "vmName": {
             "type": "string",
@@ -27,7 +26,8 @@
         "adminPasswordOrSshKey": {
             "type": "securestring",
             "defaultValue": "Sysga1n4205!"
-        },
+        }
+    },
     "variables": {
         "vmSize":"Standard_D2",
         "imagePublisher":"vmIp",
