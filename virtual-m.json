@@ -17,7 +17,11 @@
         "adminPasswordOrSshKey": {
             "type": "securestring",
             "defaultValue": "Sysga1n4205!"
-        }
+        },
+          "storageAccountName": {  "type": "string"},
+             
+
+        
     },
     "variables": {
         "vmSize":"Standard_D2",
@@ -26,7 +30,6 @@
           "imageSKU":"vmIsku",
            "imageVersion":"latest",
             "imageSKU":"vmSku",
-             "storageAccountName":"suSan",
              "networkInterfaceName":"SuNic",
               "vmStorageAccountContainerName":"suVmc"
     },
@@ -36,6 +39,9 @@
             "type": "Microsoft.Compute/virtualMachines",
             "name": "Vmsetup",
             "location": "[parameters('location')]",
+            "storageAccountName":{
+                      "value": "[variables('storageAccountName')]"
+                  },
             "properties": {
                 "hardwareProfile": {
                     "vmSize": "[variables('vmSize')]"
