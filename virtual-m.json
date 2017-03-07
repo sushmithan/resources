@@ -34,9 +34,6 @@
             "type": "Microsoft.Compute/virtualMachines",
             "name": "Vmsetup",
             "location": "[parameters('location')]",
-            "storageAccountName":{
-                      "value": "[variables('storageAccountName')]"
-                  },
             "properties": {
                 "hardwareProfile": {
                     "vmSize": "[variables('vmSize')]"
