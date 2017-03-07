@@ -4,16 +4,7 @@
     "parameters": {
         "location": {
             "type": "string",
-            "defaultValue": "westus",
-            "allowedValues": [
-                "Brazil South",
-                "brazilsouth",
-                "East Asia",
-                "eastasia"
-            ],
-            "metadata": {
-                "description": "Deployment Location Hint: Use lowercase for creating ipaddress"
-            }
+            "defaultValue": "",
         },
         "vmName": {
             "type": "string",
