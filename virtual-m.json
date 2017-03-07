@@ -22,7 +22,7 @@
     "variables": {
         "vmSize":"Standard_D2",
         "imagePublisher":"Canonical",
-         "imageOffer":"vlinux",
+         "imageOffer":"windows",
           "imageSKU":"15.10",
            "imageVersion":"latest",
              "networkInterfaceName":"SuNic",
