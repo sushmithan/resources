@@ -130,7 +130,7 @@
         },
         "networkInterfaceName": {
             "type": "string",
-            "defaultValue": "networkInterfaceName",
+            "defaultValue": "testNic",
             "metadata": {
                 "description": "Network Security Group Name"
             }
