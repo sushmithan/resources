@@ -2,12 +2,6 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "apiVersion": {
-      "type": "string",
-      "metadata": {
-        "description": "ARM resource API versions"
-      }
-    },
     "dnsLabelPrefix": {
       "type": "string"
     },
@@ -40,7 +34,7 @@
     {
       "type": "Microsoft.Network/publicIPAddresses",
       "name": "[parameters('publicIPAddressName')]",
-      "apiVersion": "[parameters('apiVersion')]",
+      "apiVersion": "2016-03-30",
       "location": "[parameters('location')]",
       "tags": {
         "project": "Chef Automate",
