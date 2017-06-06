@@ -54,7 +54,7 @@
       "type": "string"
     },
     "fqdn": {
-      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddressName')), parameters('apiVersion').publicIPAddresses).dnsSettings.fqdn]",
+      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddressName')), dnsSettings.fqdn]",
       "type": "string"
     }
   }
