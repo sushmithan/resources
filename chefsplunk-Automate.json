@@ -44,6 +44,13 @@
             "type": "string",
             "defaultValue": ""
         },
+         "tagvalues": {
+            "type": "object",
+            "defaultValue": {
+                "program": "p2p",
+                "project": "TrendMicro"
+            }
+        },
          "trendmicroTags": {
             "type": "object"
         },
