@@ -47,5 +47,5 @@
         "provider": "[parameters('providerGuid')]"
       }
     }
-  ],
+  ]
 }
