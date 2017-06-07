@@ -17,7 +17,7 @@
         "description": "The provider GUID"
       }
     },
-    "publicIPAddressName": {
+    "publicIPAddressNameAutomate": {
       "type": "string",
       "metadata": {
         "description": "Name to give to the Public IP Address"
@@ -33,7 +33,7 @@
   "resources": [
     {
       "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[parameters('publicIPAddressName')]",
+      "name": "[parameters('publicIPAddressNameAutomate')]",
       "apiVersion":"2017-03-01",
       "location": "[parameters('location')]",
       "tags": {
@@ -50,11 +50,11 @@
   ],
   "outputs": {
     "publicIpId": {
-      "value": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddressName'))]",
+      "value": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddressNameAutomate'))]",
       "type": "string"
     },
     "fqdn": {
-      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddressName'))).dnsSettings.fqdn]",
+      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddressNameAutomate'))).dnsSettings.fqdn]",
       "type": "string"
     }
   }
