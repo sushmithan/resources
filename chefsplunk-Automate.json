@@ -44,6 +44,9 @@
             "type": "string",
             "defaultValue": ""
         },
+         "trendmicroTags": {
+            "type": "object"
+        },
          "chefAutomateScriptUrl": {
             "type": "string",
             "defaultValue": ""
