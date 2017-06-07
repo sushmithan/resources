@@ -29,7 +29,7 @@
     {
       "type": "Microsoft.Network/virtualNetworks",
       "name": "[parameters('virtualNetworkName')]",
-      "apiVersion": "2017-03-01"
+      "apiVersion": "2017-03-01",
       "tags": {
         "project": "Chef Automate",
         "provider": "[parameters('providerGuid')]"
