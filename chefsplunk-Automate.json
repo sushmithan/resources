@@ -44,6 +44,10 @@
             "type": "string",
             "defaultValue": ""
         },
+         "chefAutomateScriptUrl": {
+            "type": "string",
+            "defaultValue": ""
+        },
         "automateLicenseUri": {
             "defaultValue": "https://github.com/chef-partners/omnibus-marketplace/blob/master/files/chef-marketplace-cookbooks/chef-marketplace/files/default/delivery.license?raw=true",
             "type": "string",
@@ -100,7 +104,6 @@
         "osProfile": "[variables(concat('osProfile', variables('authenticationType')))]",
         "providerGuid": "[toUpper('33194f91-eb5f-4110-827a-e95f640a9e46')]",
         "rubyPath": "/opt/chef-marketplace/embedded/bin/ruby",
-        "chefAutomateScriptUrl": "[concat(variables('baseUrl'), '/automate_setup.rb')]",
         "templateUrls": {
             "publicIPAddressUrl": "[concat(variables('baseUrl'), '/publicip.json')]",
             "storageAccountUrl": "[concat(variables('baseUrl'), '/chefstorageacc.json')]",
@@ -346,7 +349,7 @@
                 "autoUpgradeMinorVersion": true,
                 "settings": {
                     "fileUris": [
-                        "[variables('chefAutomateScriptUrl')]"
+                        "[parameters('chefAutomateScriptUrl')]"
                     ],
                     "commandToExecute": "[concat(variables('rubyPath'), ' ./automate_setup.rb --fqdn \"', reference('PublicIPAddressSetup').outputs.fqdn.value, '\" --license \"', parameters('automateLicenseUri'), '\"')]"
                 }
