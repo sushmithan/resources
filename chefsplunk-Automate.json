@@ -99,7 +99,8 @@
         },
         "osProfile": "[variables(concat('osProfile', variables('authenticationType')))]",
         "providerGuid": "[toUpper('33194f91-eb5f-4110-827a-e95f640a9e46')]",
-      
+        "rubyPath": "/opt/chef-marketplace/embedded/bin/ruby",
+        "chefAutomateScriptUrl": "[concat(variables('baseUrl'), '/automate_setup.rb')]",
         "templateUrls": {
             "publicIPAddressUrl": "[concat(variables('baseUrl'), '/publicip.json')]",
             "storageAccountUrl": "[concat(variables('baseUrl'), '/chefstorageacc.json')]",
@@ -327,6 +328,31 @@
             "dependsOn": [
                 "storageAccountSetup",
                 "[concat('Microsoft.Network/networkInterfaces/', parameters('networkInterfacesNameAutomate'))]"
+            ]
+        },
+          {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('vmNameChefAutomate'),'/automate_setup')]",
+            "apiVersion": "[variables('virtualMachineExtensions')]",
+            "location": "[variables('location')]",
+            "tags": {
+                "project": "Chef Automate",
+                "provider": "[variables('providerGuid')]"
+            },
+            "properties": {
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.0",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": [
+                        "[variables('chefAutomateScriptUrl')]"
+                    ],
+                    "commandToExecute": "[concat(variables('rubyPath'), ' ./automate_setup.rb --fqdn \"', reference('PublicIPAddressSetup').outputs.fqdn.value, '\" --license \"', parameters('automateLicenseUri'), '\"')]"
+                }
+            },
+            "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/', parameters('vmNameChefAutomate'))]"
             ]
         }
     ],
