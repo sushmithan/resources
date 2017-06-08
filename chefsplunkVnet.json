@@ -8,10 +8,10 @@
     "providerGuid": {
       "type": "string"
     },
-    "subnet2Name": {
+    "subnetName": {
       "type": "string"
     },
-    "subnet2Prefix": {
+    "subnetPrefix": {
       "type": "string"
     },
     "virtualNetworkName": {
@@ -23,7 +23,7 @@
   },
   "variables" : {
     "vnetID" : "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
-    "subnet" : "[concat(variables('vnetID'),'/subnets/',parameters('subnet2Name'))]"
+    "subnet" : "[concat(variables('vnetID'),'/subnets/',parameters('subnetName'))]"
   },
   "resources": [
     {
@@ -43,9 +43,9 @@
         },
         "subnets": [
           {
-            "name": "[parameters('subnet2Name')]",
+            "name": "[parameters('subnetName')]",
             "properties": {
-              "addressPrefix": "[parameters('subnet2Prefix')]"
+              "addressPrefix": "[parameters('subnetPrefix')]"
             }
           }
         ]
@@ -53,7 +53,7 @@
     }
   ],
   "outputs": {
-    "subnet2Ref": {
+    "subnetRef": {
       "value": "[variables('subnet')]",
       "type": "string"
     }
