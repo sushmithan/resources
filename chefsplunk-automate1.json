@@ -82,7 +82,16 @@
       "publicIPDomainNameLabelOrchServer": {
             "type": "string",
             "defaultValue": ""
-        }
+        },
+    "trendmicroTags": {
+            "type": "object"
+        },
+    "chefSoftwareTags": {
+            "type": "object"
+        },
+      "providerGuid": {
+       "type":"object"
+    }
     },
     "variables": {
         "publicIPDomainNameLabelOrchServer": "[concat('http://',parameters('publicIPDomainNameLabelOrchServer'),'.',variables('location'),'.cloudapp.azure.com:33001/key')]",
@@ -132,9 +141,7 @@
             }
         },
         "osProfile": "[variables(concat('osProfile', variables('authenticationType')))]",
-        "providerGuid": "[toUpper('33194f91-eb5f-4110-827a-e95f640a9e46')]",
-        "rubyPath": "/opt/chef-marketplace/embedded/bin/ruby",
-        "chefAutomateScriptUrl": "[concat(variables('baseUrl'), '/automate_setup.rb')]",
+        "chefAutomateScriptUrl": "[concat(variables('baseUrl'), '/chefautoscript.sh')]",
         "templateUrls": {
             "publicIPAddressUrl": "[concat(variables('baseUrl'), '/publicip.json')]",
             "storageAccountUrl": "[concat(variables('baseUrl'), '/chefstorageacc.json')]",
@@ -157,7 +164,7 @@
                         "value": "[variables('location')]"
                     },
                     "providerGuid": {
-                        "value": "[variables('providerGuid')]"
+                        "value": "[parameters('providerGuid')]"
                     },
                     "storageAccountName": {
                         "value": "[variables('storageAccountName')]"
@@ -175,7 +182,7 @@
             "location": "[variables('location')]",
             "tags": {
                 "project": "Chef Automate",
-                "provider": "[variables('providerGuid')]"
+                "provider": "[parameters('providerGuid')]"
             },
             "properties": {
                 "securityRules": [
@@ -239,7 +246,7 @@
                         "value": "[variables('location')]"
                     },
                     "providerGuid": {
-                        "value": "[variables('providerGuid')]"
+                        "value": "[parameters('providerGuid')]"
                     },
                     "publicIPAddressName": {
                         "value": "[parameters('publicIPAddressName')]"
@@ -265,7 +272,7 @@
                         "value": "[variables('location')]"
                     },
                     "providerGuid": {
-                        "value": "[variables('providerGuid')]"
+                        "value": "[parameters('providerGuid')]"
                     },
                     "subnetPrefix": {
                         "value": "[variables('subnetPrefix')]"
@@ -289,7 +296,7 @@
             "location": "[variables('location')]",
             "tags": {
                 "project": "Chef Automate",
-                "provider": "[variables('providerGuid')]"
+                "provider": "[parameters('providerGuid')]"
             },
             "properties": {
                 "ipConfigurations": [
@@ -325,10 +332,11 @@
                 "name": "[variables('imageSKU')]",
                 "product": "[variables('imageProduct')]",
                 "publisher": "[parameters('imagePublisher')]"
+               
             },
             "tags": {
                 "project": "Chef Automate",
-                "provider": "[variables('providerGuid')]"
+                "provider": "[parameters('providerGuid')]"
             },
             "properties": {
                 "hardwareProfile": {
@@ -371,7 +379,7 @@
             "location": "[variables('location')]",
             "tags": {
                 "project": "Chef Automate",
-                "provider": "[variables('providerGuid')]"
+                "provider": "[parameters('providerGuid')]"
             },
             "properties": {
                 "publisher": "Microsoft.Azure.Extensions",
